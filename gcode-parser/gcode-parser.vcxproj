@@ -19,7 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\gcode_parser.h" />
+    <ClInclude Include="src\Commands\GCodeCommand.h" />
+    <ClInclude Include="src\Commands\ToolMove\ToolMoveCommand.h" />
+    <ClInclude Include="src\Factories\GCodeCommandFactory.h" />
+    <ClInclude Include="src\Factories\ToolMove\ToolMoveCommandFactory.h" />
+    <ClInclude Include="src\GCodeParser.h" />
+    <ClInclude Include="src\GCodeParserResult.h" />
+    <ClInclude Include="src\GCodeProgram.h" />
+    <ClInclude Include="src\Visitors\GCodeCommandVisitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Commands\ToolMove\ToolMoveCommand.cpp" />
+    <ClCompile Include="src\Factories\GCodeCommandFactory.cpp" />
+    <ClCompile Include="src\Factories\ToolMove\ToolMoveCommandFactory.cpp" />
+    <ClCompile Include="src\GCodeParser.cpp" />
+    <ClCompile Include="src\GCodeProgram.cpp" />
+    <ClCompile Include="src\Visitors\GCodeCommandVisitor.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
