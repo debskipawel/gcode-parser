@@ -10,7 +10,7 @@ namespace GCP
 	{
 		SUCCESS = 0,
 		WARNING = 1,
-		ERROR = 2,
+		PARSER_ERROR = 2,
 	};
 
 	struct GCodeParserResult

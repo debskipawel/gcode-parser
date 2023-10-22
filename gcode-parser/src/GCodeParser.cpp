@@ -51,7 +51,7 @@ namespace GCP
         
         if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath))
         {
-            result.m_Result = GCodeParserCode::ERROR;
+            result.m_Result = GCodeParserCode::PARSER_ERROR;
             result.m_Message = "Incorrect input file - either doesn't exist or is not a text file.";
 
             return result;
