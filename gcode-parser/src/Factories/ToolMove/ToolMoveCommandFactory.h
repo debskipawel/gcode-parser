@@ -15,12 +15,14 @@ namespace GCP
 		virtual std::shared_ptr<GCodeCommand> CreateFrom(std::string codeLine) override;
 
 	protected:
-		static std::optional<float> GetCoordinateValue(const std::string& regexPattern, const std::string& codeLine);
+		virtual std::shared_ptr<GCodeCommand> CreateCommand(std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed) = 0;
 
-		inline static std::string s_NumericValue = "(0|(-?[1-9][0-9]*))\\.[0-9]{3}";
+		static std::optional<float> GetNumericValue(const std::string& regexPattern, const std::string& codeLine);
 
-		inline static std::string s_RegexNumericValueX = std::format("X{}", s_NumericValue);
-		inline static std::string s_RegexNumericValueY = std::format("Y{}", s_NumericValue);
-		inline static std::string s_RegexNumericValueZ = std::format("Z{}", s_NumericValue);
+		std::string m_RegexNumericValueF;
+
+		std::string m_RegexNumericValueX;
+		std::string m_RegexNumericValueY;
+		std::string m_RegexNumericValueZ;
 	};
 }

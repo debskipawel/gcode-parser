@@ -9,7 +9,8 @@ namespace GCP
 	enum class GCodeParserCode : unsigned int
 	{
 		SUCCESS = 0,
-		PARSER_ERROR = 1,
+		WARNING = 1,
+		ERROR = 2,
 	};
 
 	struct GCodeParserResult

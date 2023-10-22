@@ -3,26 +3,33 @@
 #include <format>
 
 #include <Commands/ToolMove/ToolMoveCommand.h>
+#include <Factories/GCodeRegexResources.h>
 
 namespace GCP
 {
 	ToolMoveCommandFactory::ToolMoveCommandFactory()
 	{
-		m_CommandValidationRegex = std::format("N[0-9]*[1-9]+\\s*((G0+)|(G0*1))\\s*({})?\\s*({})?\\s*({})?", s_RegexNumericValueX, s_RegexNumericValueY, s_RegexNumericValueZ);
+		m_RegexNumericValueX = std::format("X\\s*{}", GCodeRegexResources::s_NumericValue);
+		m_RegexNumericValueY = std::format("Y\\s*{}", GCodeRegexResources::s_NumericValue);
+		m_RegexNumericValueZ = std::format("Z\\s*{}", GCodeRegexResources::s_NumericValue);
+
+		m_RegexNumericValueF = std::format("F\\s*{}", GCodeRegexResources::s_NumericValue);
 	}
 
 	std::shared_ptr<GCodeCommand> ToolMoveCommandFactory::CreateFrom(std::string codeLine)
 	{
 		std::smatch match;
 
-		auto x = GetCoordinateValue(s_RegexNumericValueX, codeLine);
-		auto y = GetCoordinateValue(s_RegexNumericValueY, codeLine);
-		auto z = GetCoordinateValue(s_RegexNumericValueZ, codeLine);
+		auto x = GetNumericValue(m_RegexNumericValueX, codeLine);
+		auto y = GetNumericValue(m_RegexNumericValueY, codeLine);
+		auto z = GetNumericValue(m_RegexNumericValueZ, codeLine);
 
-		return std::make_shared<ToolMoveCommand>(x, y, z);
+		auto speed = GetNumericValue(m_RegexNumericValueF, codeLine);
+
+		return CreateCommand(x, y, z, speed);
 	}
 
-	std::optional<float> ToolMoveCommandFactory::GetCoordinateValue(const std::string& regexPattern, const std::string& codeLine)
+	std::optional<float> ToolMoveCommandFactory::GetNumericValue(const std::string& regexPattern, const std::string& codeLine)
 	{
 		std::smatch match;
 
@@ -30,7 +37,7 @@ namespace GCP
 		{
 			auto value = match[0].str();
 
-			std::regex_search(value, match, std::regex(s_NumericValue));
+			std::regex_search(value, match, std::regex(GCodeRegexResources::s_NumericValue));
 
 			return std::stof(match[0].str());
 		}

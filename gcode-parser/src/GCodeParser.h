@@ -18,6 +18,8 @@ namespace GCP
 		GCodeParserResult LoadFromFile(std::filesystem::path filepath);
 
 	protected:
+		virtual bool IsLineEmpty(const std::string& codeLine);
+
 		std::vector<std::unique_ptr<GCodeCommandFactory>> m_CommandFactories;
 	};
 }
