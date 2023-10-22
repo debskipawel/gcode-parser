@@ -12,6 +12,6 @@ namespace GCP
 
 		inline static std::string s_LineNumberPrefix = "N[0-9]+";
 
-		inline static std::string s_NumericValue = "(0|(-?[1-9][0-9]*))(\\.[0-9]{3})?";
+		inline static std::string s_NumericValue = "-?(0|([1-9][0-9]*))(\\.[0-9]{3})?";
 	};
 }
