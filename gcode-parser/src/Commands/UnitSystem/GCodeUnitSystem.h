@@ -4,7 +4,7 @@ namespace GCP
 {
 	enum class GCodeUnitSystem : unsigned int
 	{
-		MM = 0,
-		IN = 1,
+		MILLIMETER = 0,
+		INCHES = 1,
 	};
 }

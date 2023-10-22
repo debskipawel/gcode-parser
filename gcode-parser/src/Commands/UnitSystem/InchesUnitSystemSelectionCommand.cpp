@@ -16,6 +16,6 @@ namespace GCP
 
     GCodeUnitSystem InchesUnitSystemSelectionCommand::GetUnitSystemSelected() const
     {
-        return GCodeUnitSystem::IN;
+        return GCodeUnitSystem::INCHES;
     }
 }

@@ -12,6 +12,6 @@ namespace GCP
 
 	GCodeUnitSystem MillimetersUnitSystemSelectionCommand::GetUnitSystemSelected() const
 	{
-		return GCodeUnitSystem::MM;
+		return GCodeUnitSystem::MILLIMETER;
 	}
 }
