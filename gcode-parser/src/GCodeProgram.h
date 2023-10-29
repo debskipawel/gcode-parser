@@ -14,7 +14,6 @@ namespace GCP
 
 		virtual void Run();
 
-	private:
 		std::vector<std::shared_ptr<GCodeCommand>> m_Commands;
 	};
 }
