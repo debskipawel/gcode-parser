@@ -11,7 +11,6 @@ namespace GCP
 	public:
 		explicit ToolMoveCommand(std::optional<float> x = std::nullopt, std::optional<float> y = std::nullopt, std::optional<float> z = std::nullopt, std::optional<float> speed = std::nullopt);
 
-	protected:
 		std::optional<float> m_X, m_Y, m_Z;
 		std::optional<float> m_MoveSpeed;
 	};

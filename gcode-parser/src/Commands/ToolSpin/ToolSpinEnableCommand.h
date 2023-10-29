@@ -12,7 +12,6 @@ namespace GCP
 		explicit ToolSpinEnableCommand();
 		explicit ToolSpinEnableCommand(float rotationSpeed);
 
-	protected:
 		std::optional<float> m_RotationSpeed;
 	};
 }
