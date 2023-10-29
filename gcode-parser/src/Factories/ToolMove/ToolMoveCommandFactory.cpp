@@ -26,7 +26,8 @@ namespace GCP
 
 		auto speed = GetNumericValue(m_RegexNumericValueF, codeLine);
 
-		return CreateCommand(x, y, z, speed);
+		// the coordinates are switched ON PURPOSE - supposedly the Z axis is up, but in all my applications I use the Y axis as up
+		return CreateCommand(x, z, y, speed);
 	}
 
 	std::optional<float> ToolMoveCommandFactory::GetNumericValue(const std::string& regexPattern, const std::string& codeLine)
