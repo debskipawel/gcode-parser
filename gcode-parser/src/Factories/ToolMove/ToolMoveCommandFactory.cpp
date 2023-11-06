@@ -24,6 +24,12 @@ namespace GCP
 		auto y = GetNumericValue(m_RegexNumericValueY, codeLine);
 		auto z = GetNumericValue(m_RegexNumericValueZ, codeLine);
 
+		// switch to left-hand system (absolutely disgusting)
+		if (y.has_value())
+		{
+			y.value() *= -1;
+		}
+
 		auto speed = GetNumericValue(m_RegexNumericValueF, codeLine);
 
 		// the coordinates are switched ON PURPOSE - supposedly the Z axis is up, but in all my applications I use the Y axis as up
