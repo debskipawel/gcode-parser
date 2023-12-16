@@ -2,6 +2,7 @@
 #include <format>
 
 #include <GCodeParser.h>
+#include <GCodeSerializer.h>
 
 int main()
 {
@@ -17,6 +18,10 @@ int main()
 	{
 		std::cout << std::format("[PARSING ERROR]: {}\n", result.m_Message);
 	}
+
+	auto serializer = GCP::GCodeSerializer();
+
+	serializer.Serialize(result.m_Program, "serializer_test.f04");
 
 	return 0;
 }

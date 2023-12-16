@@ -7,11 +7,10 @@ namespace GCP
 	class GCodeCommand
 	{
 	public:
-	protected:
-		virtual void Accept(GCodeCommandVisitor& visitor) = 0;
+		unsigned int m_LineNumber;
 
 	protected:
-		unsigned int m_LineNumber;
+		virtual void Accept(GCodeCommandVisitor& visitor) = 0;
 
 		friend class GCodeCommandVisitor;
 	};

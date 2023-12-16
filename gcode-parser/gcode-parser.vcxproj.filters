@@ -120,6 +120,12 @@
     <ClInclude Include="src\Factories\ToolPositioning\ToolPositioningIncrementalCommandFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\GCodeSerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Visitors\GCodeCommandSerializerVisitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Visitors\GCodeCommandVisitor.cpp">
@@ -213,6 +219,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Factories\ToolPositioning\ToolPositioningIncrementalCommandFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GCodeSerializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Visitors\GCodeCommandSerializerVisitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

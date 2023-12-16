@@ -53,7 +53,9 @@
     <ClInclude Include="src\GCodeParser.h" />
     <ClInclude Include="src\GCodeParserResult.h" />
     <ClInclude Include="src\GCodeProgram.h" />
+    <ClInclude Include="src\GCodeSerializer.h" />
     <ClInclude Include="src\Visitors\GCodeCommandVisitor.h" />
+    <ClInclude Include="src\Visitors\GCodeCommandSerializerVisitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Commands\CutterCompensation\CutterCompensationDisableCommand.cpp" />
@@ -86,6 +88,8 @@
     <ClCompile Include="src\Factories\UnitSystem\MillimetersUnitSystemSelectionCommandFactory.cpp" />
     <ClCompile Include="src\GCodeParser.cpp" />
     <ClCompile Include="src\GCodeProgram.cpp" />
+    <ClCompile Include="src\GCodeSerializer.cpp" />
+    <ClCompile Include="src\Visitors\GCodeCommandSerializerVisitor.cpp" />
     <ClCompile Include="src\Visitors\GCodeCommandVisitor.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

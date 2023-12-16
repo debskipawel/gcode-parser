@@ -1,7 +1,5 @@
 #include "GCodeCommandFactory.h"
 
-
-
 namespace GCP
 {
     bool GCodeCommandFactory::CanBeCreatedFrom(std::string codeLine)
