@@ -1,5 +1,7 @@
 #include "GCodeCommandSerializerVisitor.h"
 
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include <format>
 
@@ -12,10 +14,53 @@ namespace GCP
 	
 	void GCodeCommandSerializerVisitor::Visit(FastToolMoveCommand& command)
 	{
-		auto moveSpeedText = command.m_MoveSpeed ? std::format("F{} ", command.m_MoveSpeed.value()) : "";
-		auto moveXText = command.m_X ? std::format("X{} ", command.m_X.value()) : "";
-		auto moveYText = command.m_Z ? std::format("Y{} ", -command.m_Z.value()) : "";
-		auto moveZText = command.m_Y ? std::format("Z{} ", command.m_Y.value()) : "";
+		auto moveSpeedText = std::string("");
+
+		if (command.m_MoveSpeed)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_MoveSpeed.value();
+
+			auto value = formatter.str();
+
+			moveSpeedText = std::format("F{} ", value);
+		}
+
+		auto moveXText = std::string("");
+
+		if (command.m_X)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_X.value();
+
+			auto value = formatter.str();
+
+			moveXText = std::format("X{} ", value);
+		}
+
+		auto moveYText = std::string("");
+
+		if (command.m_Z)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << -command.m_Z.value();
+
+			auto value = formatter.str();
+
+			moveYText = std::format("Y{} ", value);
+		}
+
+		auto moveZText = std::string("");
+
+		if (command.m_Y)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_Y.value();
+
+			auto value = formatter.str();
+
+			moveXText = std::format("Z{} ", value);
+		}
 
 		auto commandCode = std::format("N{} G0 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
 
@@ -24,10 +69,53 @@ namespace GCP
 	
 	void GCodeCommandSerializerVisitor::Visit(SlowToolMoveCommand& command)
 	{
-		auto moveSpeedText = command.m_MoveSpeed ? std::format("F{} ", command.m_MoveSpeed.value()) : "";
-		auto moveXText = command.m_X ? std::format("X{} ", command.m_X.value()) : "";
-		auto moveYText = command.m_Z ? std::format("Y{} ", -command.m_Z.value()) : "";
-		auto moveZText = command.m_Y ? std::format("Z{} ", command.m_Y.value()) : "";
+		auto moveSpeedText = std::string("");
+
+		if (command.m_MoveSpeed)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_MoveSpeed.value();
+
+			auto value = formatter.str();
+
+			moveSpeedText = std::format("F{} ", value);
+		}
+
+		auto moveXText = std::string("");
+
+		if (command.m_X)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_X.value();
+
+			auto value = formatter.str();
+
+			moveXText = std::format("X{} ", value);
+		}
+
+		auto moveYText = std::string("");
+
+		if (command.m_Z)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << -command.m_Z.value();
+
+			auto value = formatter.str();
+
+			moveYText = std::format("Y{} ", value);
+		}
+
+		auto moveZText = std::string("");
+
+		if (command.m_Y)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_Y.value();
+
+			auto value = formatter.str();
+
+			moveXText = std::format("Z{} ", value);
+		}
 
 		auto commandCode = std::format("N{} G1 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
 
@@ -36,7 +124,18 @@ namespace GCP
 	
 	void GCodeCommandSerializerVisitor::Visit(ToolSpinClockwiseEnableCommand& command)
 	{
-		auto rotationSpeedText = command.m_RotationSpeed ? std::format("S{} ", command.m_RotationSpeed.value()) : "";
+		auto rotationSpeedText = std::string("");
+
+		if (command.m_RotationSpeed)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_RotationSpeed.value();
+
+			auto value = formatter.str();
+
+			rotationSpeedText = std::format("S{} ", value);
+		}
+
 		auto commandCode = std::format("N{} M3 {}\n", command.m_LineNumber, rotationSpeedText);
 
 		m_FileStream << commandCode;
@@ -44,7 +143,18 @@ namespace GCP
 	
 	void GCodeCommandSerializerVisitor::Visit(ToolSpinCounterClockwiseEnableCommand& command)
 	{
-		auto rotationSpeedText = command.m_RotationSpeed ? std::format("S{} ", command.m_RotationSpeed.value()) : "";
+		auto rotationSpeedText = std::string("");
+
+		if (command.m_RotationSpeed)
+		{
+			auto formatter = std::stringstream();
+			formatter << std::fixed << std::setprecision(3) << command.m_RotationSpeed.value();
+
+			auto value = formatter.str();
+
+			rotationSpeedText = std::format("S{} ", value);
+		}
+
 		auto commandCode = std::format("N{} M4 {}\n", command.m_LineNumber, rotationSpeedText);
 
 		m_FileStream << commandCode;
