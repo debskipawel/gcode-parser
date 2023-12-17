@@ -14,8 +14,8 @@ namespace GCP
 	{
 		auto moveSpeedText = command.m_MoveSpeed ? std::format("F{} ", command.m_MoveSpeed.value()) : "";
 		auto moveXText = command.m_X ? std::format("X{} ", command.m_X.value()) : "";
-		auto moveYText = command.m_Y ? std::format("Y{} ", command.m_Y.value()) : "";
-		auto moveZText = command.m_Z ? std::format("Z{} ", command.m_Z.value()) : "";
+		auto moveYText = command.m_Z ? std::format("Y{} ", -command.m_Z.value()) : "";
+		auto moveZText = command.m_Y ? std::format("Z{} ", command.m_Y.value()) : "";
 
 		auto commandCode = std::format("N{} G0 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
 
@@ -26,8 +26,8 @@ namespace GCP
 	{
 		auto moveSpeedText = command.m_MoveSpeed ? std::format("F{} ", command.m_MoveSpeed.value()) : "";
 		auto moveXText = command.m_X ? std::format("X{} ", command.m_X.value()) : "";
-		auto moveYText = command.m_Y ? std::format("Y{} ", command.m_Y.value()) : "";
-		auto moveZText = command.m_Z ? std::format("Z{} ", command.m_Z.value()) : "";
+		auto moveYText = command.m_Z ? std::format("Y{} ", -command.m_Z.value()) : "";
+		auto moveZText = command.m_Y ? std::format("Z{} ", command.m_Y.value()) : "";
 
 		auto commandCode = std::format("N{} G1 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
 
