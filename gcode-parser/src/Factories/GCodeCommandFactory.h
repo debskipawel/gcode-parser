@@ -16,6 +16,8 @@ namespace GCP
 		virtual std::shared_ptr<GCodeCommand> CreateFrom(std::string codeLine) = 0;
 
 	protected:
+		virtual auto LineNumber(std::string codeLine) -> unsigned int;
+
 		std::vector<std::regex> m_CommandValidationRegexes;
 	};
 }

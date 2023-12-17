@@ -4,13 +4,13 @@
 
 namespace GCP
 {
-	ToolSpinClockwiseEnableCommand::ToolSpinClockwiseEnableCommand()
-		: ToolSpinEnableCommand()
+	ToolSpinClockwiseEnableCommand::ToolSpinClockwiseEnableCommand(unsigned int lineNumber)
+		: ToolSpinEnableCommand(lineNumber)
 	{
 	}
 
-	ToolSpinClockwiseEnableCommand::ToolSpinClockwiseEnableCommand(float rotationSpeed)
-		: ToolSpinEnableCommand(rotationSpeed)
+	ToolSpinClockwiseEnableCommand::ToolSpinClockwiseEnableCommand(unsigned int lineNumber, float rotationSpeed)
+		: ToolSpinEnableCommand(lineNumber, rotationSpeed)
 	{
 	}
 	

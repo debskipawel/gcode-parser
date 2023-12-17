@@ -8,7 +8,7 @@ namespace GCP
 	class UnitSystemSelectionCommand : public GCodeCommand
 	{
 	public:
-		explicit UnitSystemSelectionCommand();
+		explicit UnitSystemSelectionCommand(unsigned int lineNumber);
 
 		virtual GCodeUnitSystem GetUnitSystemSelected() const = 0;
 

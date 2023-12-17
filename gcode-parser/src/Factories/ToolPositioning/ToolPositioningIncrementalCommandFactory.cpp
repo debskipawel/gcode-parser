@@ -17,6 +17,8 @@ namespace GCP
 
 	std::shared_ptr<GCodeCommand> ToolPositioningIncrementalCommandFactory::CreateFrom(std::string codeLine)
 	{
-		return std::make_shared<ToolPositioningIncrementalCommand>();
+		auto lineNumber = LineNumber(codeLine);
+
+		return std::make_shared<ToolPositioningIncrementalCommand>(lineNumber);
 	}
 }

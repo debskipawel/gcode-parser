@@ -12,6 +12,8 @@ namespace GCP
 
 	std::shared_ptr<GCodeCommand> ToolSpinDisableCommandFactory::CreateFrom(std::string codeLine)
 	{
-		return std::make_shared<ToolSpinDisableCommand>();
+		auto lineNumber = LineNumber(codeLine);
+
+		return std::make_shared<ToolSpinDisableCommand>(lineNumber);
 	}
 }

@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Commands\CutterCompensation\CutterCompensationDisableCommand.cpp" />
+    <ClCompile Include="src\Commands\GCodeCommand.cpp" />
     <ClCompile Include="src\Commands\ProgramStop\ProgramStopCommand.cpp" />
     <ClCompile Include="src\Commands\ToolMove\FastToolMoveCommand.cpp" />
     <ClCompile Include="src\Commands\ToolMove\SlowToolMoveCommand.cpp" />

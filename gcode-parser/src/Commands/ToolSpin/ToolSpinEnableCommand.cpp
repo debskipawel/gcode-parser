@@ -2,13 +2,13 @@
 
 namespace GCP
 {
-	ToolSpinEnableCommand::ToolSpinEnableCommand()
-		: m_RotationSpeed(std::nullopt)
+	ToolSpinEnableCommand::ToolSpinEnableCommand(unsigned int lineNumber)
+		: GCodeCommand(lineNumber), m_RotationSpeed(std::nullopt)
 	{
 	}
 
-	ToolSpinEnableCommand::ToolSpinEnableCommand(float rotationSpeed)
-		: m_RotationSpeed(rotationSpeed)
+	ToolSpinEnableCommand::ToolSpinEnableCommand(unsigned int lineNumber, float rotationSpeed)
+		: GCodeCommand(lineNumber), m_RotationSpeed(rotationSpeed)
 	{
 	}
 }

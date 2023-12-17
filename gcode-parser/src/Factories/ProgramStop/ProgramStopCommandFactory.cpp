@@ -17,6 +17,8 @@ namespace GCP
 
 	std::shared_ptr<GCodeCommand> ProgramStopCommandFactory::CreateFrom(std::string codeLine)
 	{
-		return std::make_shared<ProgramStopCommand>();
+		auto lineNumber = LineNumber(codeLine);
+
+		return std::make_shared<ProgramStopCommand>(lineNumber);
 	}
 }

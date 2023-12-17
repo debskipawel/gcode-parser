@@ -7,7 +7,7 @@ namespace GCP
 	class ToolPositioningIncrementalCommand : public GCodeCommand
 	{
 	public:
-		explicit ToolPositioningIncrementalCommand();
+		explicit ToolPositioningIncrementalCommand(unsigned int lineNumber = 0);
 
 		virtual void Accept(GCodeCommandVisitor& visitor) override;
 	};

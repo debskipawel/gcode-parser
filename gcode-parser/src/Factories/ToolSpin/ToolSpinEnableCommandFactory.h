@@ -14,7 +14,7 @@ namespace GCP
 		virtual std::shared_ptr<GCodeCommand> CreateFrom(std::string codeLine) override;
 
 	protected:
-		virtual std::shared_ptr<GCodeCommand> CreateCommand(std::optional<float> rotationSpeed) = 0;
+		virtual std::shared_ptr<GCodeCommand> CreateCommand(unsigned int lineNumber, std::optional<float> rotationSpeed) = 0;
 
 		virtual std::optional<float> GetRotationSpeed(std::string codeLine);
 

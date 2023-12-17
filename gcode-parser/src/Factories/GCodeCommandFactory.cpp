@@ -12,4 +12,18 @@ namespace GCP
             }
         );
     }
+
+    auto GCodeCommandFactory::LineNumber(std::string codeLine) -> unsigned int
+    {
+        std::smatch match;
+
+        if (std::regex_search(codeLine, match, std::regex("^\\s*N([0-9]+)")))
+        {
+            auto value = match[1].str();
+
+            return std::stoi(value);
+        }
+
+        return 0;
+    }
 }

@@ -16,10 +16,10 @@ namespace GCP
 		);
 	}
 
-	std::shared_ptr<GCodeCommand> ToolSpinCounterClockwiseEnableCommandFactory::CreateCommand(std::optional<float> rotationSpeed)
+	std::shared_ptr<GCodeCommand> ToolSpinCounterClockwiseEnableCommandFactory::CreateCommand(unsigned int lineNumber, std::optional<float> rotationSpeed)
 	{
 		return rotationSpeed.has_value()
-			? std::make_shared<ToolSpinCounterClockwiseEnableCommand>(rotationSpeed.value())
-			: std::make_shared<ToolSpinCounterClockwiseEnableCommand>();
+			? std::make_shared<ToolSpinCounterClockwiseEnableCommand>(lineNumber, rotationSpeed.value())
+			: std::make_shared<ToolSpinCounterClockwiseEnableCommand>(lineNumber);
 	}
 }

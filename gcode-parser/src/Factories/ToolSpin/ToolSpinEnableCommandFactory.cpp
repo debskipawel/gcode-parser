@@ -12,8 +12,9 @@ namespace GCP
 	std::shared_ptr<GCodeCommand> ToolSpinEnableCommandFactory::CreateFrom(std::string codeLine)
 	{
 		auto rotationSpeed = GetRotationSpeed(codeLine);
+		auto lineNumber = LineNumber(codeLine);
 
-		return CreateCommand(rotationSpeed);
+		return CreateCommand(lineNumber, rotationSpeed);
 	}
 
 	std::optional<float> ToolSpinEnableCommandFactory::GetRotationSpeed(std::string codeLine)

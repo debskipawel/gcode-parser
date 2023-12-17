@@ -4,7 +4,8 @@
 
 namespace GCP
 {
-	ToolPositioningIncrementalCommand::ToolPositioningIncrementalCommand()
+	ToolPositioningIncrementalCommand::ToolPositioningIncrementalCommand(unsigned int lineNumber)
+		: GCodeCommand(lineNumber)
 	{
 	}
 

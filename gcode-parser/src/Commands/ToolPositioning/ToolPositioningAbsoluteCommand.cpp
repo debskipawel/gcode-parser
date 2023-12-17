@@ -4,7 +4,8 @@
 
 namespace GCP
 {
-	ToolPositioningAbsoluteCommand::ToolPositioningAbsoluteCommand()
+	ToolPositioningAbsoluteCommand::ToolPositioningAbsoluteCommand(unsigned int lineNumber)
+		: GCodeCommand(lineNumber)
 	{
 	}
 

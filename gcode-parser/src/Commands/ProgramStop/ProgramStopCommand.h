@@ -7,7 +7,7 @@ namespace GCP
 	class ProgramStopCommand : public GCodeCommand
 	{
 	public:
-		ProgramStopCommand();
+		ProgramStopCommand(unsigned int lineNumber = 0);
 
 		virtual void Accept(GCodeCommandVisitor& visitor) override;
 	};

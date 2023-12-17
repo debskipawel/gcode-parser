@@ -4,7 +4,8 @@
 
 namespace GCP
 {
-	ProgramStopCommand::ProgramStopCommand()
+	ProgramStopCommand::ProgramStopCommand(unsigned int lineNumber)
+		: GCodeCommand(lineNumber)
 	{
 	}
 

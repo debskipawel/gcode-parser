@@ -7,7 +7,7 @@ namespace GCP
 	class ToolPositioningAbsoluteCommand : public GCodeCommand
 	{
 	public:
-		explicit ToolPositioningAbsoluteCommand();
+		explicit ToolPositioningAbsoluteCommand(unsigned int lineNumber = 0);
 
 		virtual void Accept(GCodeCommandVisitor& visitor) override;
 	};

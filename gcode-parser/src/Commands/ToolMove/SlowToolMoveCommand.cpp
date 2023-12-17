@@ -4,8 +4,8 @@
 
 namespace GCP
 {
-	SlowToolMoveCommand::SlowToolMoveCommand(std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed)
-		: ToolMoveCommand(x, y, z, speed)
+	SlowToolMoveCommand::SlowToolMoveCommand(unsigned int lineNumber, std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed)
+		: ToolMoveCommand(lineNumber, x, y, z, speed)
 	{
 	}
 

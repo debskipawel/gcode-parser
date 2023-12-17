@@ -2,7 +2,8 @@
 
 namespace GCP
 {
-	UnitSystemSelectionCommand::UnitSystemSelectionCommand()
+	UnitSystemSelectionCommand::UnitSystemSelectionCommand(unsigned int lineNumber)
+		: GCodeCommand(lineNumber)
 	{
 	}
 }

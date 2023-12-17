@@ -7,7 +7,7 @@ namespace GCP
 	class MillimetersUnitSystemSelectionCommand : public UnitSystemSelectionCommand
 	{
 	public:
-		explicit MillimetersUnitSystemSelectionCommand();
+		explicit MillimetersUnitSystemSelectionCommand(unsigned int lineNumber = 0);
 
 		virtual void Accept(GCodeCommandVisitor& visitor) override;
 

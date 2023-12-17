@@ -15,7 +15,7 @@ namespace GCP
 		virtual std::shared_ptr<GCodeCommand> CreateFrom(std::string codeLine) override;
 
 	protected:
-		virtual std::shared_ptr<GCodeCommand> CreateCommand(std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed) = 0;
+		virtual std::shared_ptr<GCodeCommand> CreateCommand(unsigned int lineNumber, std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed) = 0;
 
 		static std::optional<float> GetNumericValue(const std::string& regexPattern, const std::string& codeLine);
 

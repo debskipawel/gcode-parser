@@ -10,6 +10,6 @@ namespace GCP
 		explicit ToolSpinCounterClockwiseEnableCommandFactory();
 
 	protected:
-		virtual std::shared_ptr<GCodeCommand> CreateCommand(std::optional<float> rotationSpeed) override;
+		virtual std::shared_ptr<GCodeCommand> CreateCommand(unsigned int lineNumber, std::optional<float> rotationSpeed) override;
 	};
 }

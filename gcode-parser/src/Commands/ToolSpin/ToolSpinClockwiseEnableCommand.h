@@ -7,8 +7,8 @@ namespace GCP
 	class ToolSpinClockwiseEnableCommand : public ToolSpinEnableCommand
 	{
 	public:
-		explicit ToolSpinClockwiseEnableCommand();
-		explicit ToolSpinClockwiseEnableCommand(float rotationSpeed);
+		explicit ToolSpinClockwiseEnableCommand(unsigned int lineNumber = 0);
+		explicit ToolSpinClockwiseEnableCommand(unsigned int lineNumber, float rotationSpeed);
 
 		virtual void Accept(GCodeCommandVisitor& visitor) override;
 	};

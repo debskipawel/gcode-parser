@@ -19,8 +19,8 @@ namespace GCP
 		);
 	}
 
-	std::shared_ptr<GCodeCommand> FastToolMoveCommandFactory::CreateCommand(std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed)
+	std::shared_ptr<GCodeCommand> FastToolMoveCommandFactory::CreateCommand(unsigned int lineNumber, std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed)
 	{
-		return std::make_shared<FastToolMoveCommand>(x, y, z, speed);
+		return std::make_shared<FastToolMoveCommand>(lineNumber, x, y, z, speed);
 	}
 }

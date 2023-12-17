@@ -17,6 +17,8 @@ namespace GCP
 
 	std::shared_ptr<GCodeCommand> InchesUnitSystemSelectionCommandFactory::CreateFrom(std::string codeLine)
 	{
-		return std::make_shared<InchesUnitSystemSelectionCommand>();
+		auto lineNumber = LineNumber(codeLine);
+
+		return std::make_shared<InchesUnitSystemSelectionCommand>(lineNumber);
 	}
 }

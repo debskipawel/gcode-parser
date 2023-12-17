@@ -14,6 +14,8 @@ namespace GCP
 
 	std::shared_ptr<GCodeCommand> CutterCompensationDisableCommandFactory::CreateFrom(std::string codeLine)
 	{
-		return std::make_shared<CutterCompensationDisableCommand>();
+		auto lineNumber = LineNumber(codeLine);
+
+		return std::make_shared<CutterCompensationDisableCommand>(lineNumber);
 	}
 }

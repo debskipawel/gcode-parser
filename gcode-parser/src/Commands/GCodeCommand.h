@@ -7,6 +7,8 @@ namespace GCP
 	class GCodeCommand
 	{
 	public:
+		GCodeCommand(unsigned int lineNumber);
+
 		unsigned int m_LineNumber;
 
 	protected:

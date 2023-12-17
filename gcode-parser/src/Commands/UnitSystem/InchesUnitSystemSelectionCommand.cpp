@@ -5,7 +5,8 @@
 
 namespace GCP
 {
-    InchesUnitSystemSelectionCommand::InchesUnitSystemSelectionCommand()
+    InchesUnitSystemSelectionCommand::InchesUnitSystemSelectionCommand(unsigned int lineNumber)
+        : UnitSystemSelectionCommand(lineNumber)
     {
     }
 

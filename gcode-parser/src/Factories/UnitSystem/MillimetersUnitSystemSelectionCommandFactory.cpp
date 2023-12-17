@@ -17,6 +17,8 @@ namespace GCP
 
 	std::shared_ptr<GCodeCommand> GCP::MillimetersUnitSystemSelectionCommandFactory::CreateFrom(std::string codeLine)
 	{
-		return std::make_shared<MillimetersUnitSystemSelectionCommand>();
+		auto lineNumber = LineNumber(codeLine);
+
+		return std::make_shared<MillimetersUnitSystemSelectionCommand>(lineNumber);
 	}
 }

@@ -10,6 +10,6 @@ namespace GCP
 		explicit SlowToolMoveCommandFactory();
 
 	protected:
-		virtual std::shared_ptr<GCodeCommand> CreateCommand(std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed) override;
+		virtual std::shared_ptr<GCodeCommand> CreateCommand(unsigned int lineNumber, std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed) override;
 	};
 }

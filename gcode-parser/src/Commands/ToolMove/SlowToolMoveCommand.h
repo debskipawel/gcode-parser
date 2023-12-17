@@ -7,7 +7,7 @@ namespace GCP
 	class SlowToolMoveCommand : public ToolMoveCommand
 	{
 	public:
-		explicit SlowToolMoveCommand(std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed);
+		explicit SlowToolMoveCommand(unsigned int lineNumber, std::optional<float> x, std::optional<float> y, std::optional<float> z, std::optional<float> speed);
 
 		virtual void Accept(GCodeCommandVisitor& visitor) override;
 	};

@@ -2,7 +2,8 @@
 
 namespace GCP
 {
-	MillimetersUnitSystemSelectionCommand::MillimetersUnitSystemSelectionCommand()
+	MillimetersUnitSystemSelectionCommand::MillimetersUnitSystemSelectionCommand(unsigned int lineNumber)
+		: UnitSystemSelectionCommand(lineNumber)
 	{
 	}
 
