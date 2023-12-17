@@ -59,7 +59,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveXText = std::format("Z{} ", value);
+			moveZText = std::format("Z{} ", value);
 		}
 
 		auto commandCode = std::format("N{} G0 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
@@ -114,7 +114,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveXText = std::format("Z{} ", value);
+			moveZText = std::format("Z{} ", value);
 		}
 
 		auto commandCode = std::format("N{} G1 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
