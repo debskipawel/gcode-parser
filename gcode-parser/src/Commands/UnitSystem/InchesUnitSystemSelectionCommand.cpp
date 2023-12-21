@@ -1,7 +1,6 @@
 #include "InchesUnitSystemSelectionCommand.h"
 
 #include <Visitors/GCodeCommandVisitor.h>
-#include "InchesUnitSystemSelectionCommand.h"
 
 namespace GCP
 {

@@ -23,7 +23,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveSpeedText = std::format("F{} ", value);
+			moveSpeedText = std::format("F{}", value);
 		}
 
 		auto moveXText = std::string("");
@@ -35,7 +35,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveXText = std::format("X{} ", value);
+			moveXText = std::format("X{}", value);
 		}
 
 		auto moveYText = std::string("");
@@ -47,7 +47,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveYText = std::format("Y{} ", value);
+			moveYText = std::format("Y{}", value);
 		}
 
 		auto moveZText = std::string("");
@@ -59,10 +59,10 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveZText = std::format("Z{} ", value);
+			moveZText = std::format("Z{}", value);
 		}
 
-		auto commandCode = std::format("N{} G0 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
+		auto commandCode = std::format("N{}G00{}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
 
 		m_FileStream << commandCode;
 	}
@@ -78,7 +78,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveSpeedText = std::format("F{} ", value);
+			moveSpeedText = std::format("F{}", value);
 		}
 
 		auto moveXText = std::string("");
@@ -90,7 +90,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveXText = std::format("X{} ", value);
+			moveXText = std::format("X{}", value);
 		}
 
 		auto moveYText = std::string("");
@@ -102,7 +102,7 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveYText = std::format("Y{} ", value);
+			moveYText = std::format("Y{}", value);
 		}
 
 		auto moveZText = std::string("");
@@ -114,10 +114,10 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			moveZText = std::format("Z{} ", value);
+			moveZText = std::format("Z{}", value);
 		}
 
-		auto commandCode = std::format("N{} G1 {}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
+		auto commandCode = std::format("N{}G01{}{}{}{}\n", command.m_LineNumber, moveSpeedText, moveXText, moveYText, moveZText);
 
 		m_FileStream << commandCode;
 	}
@@ -136,7 +136,7 @@ namespace GCP
 			rotationSpeedText = std::format("S{} ", value);
 		}
 
-		auto commandCode = std::format("N{} M3 {}\n", command.m_LineNumber, rotationSpeedText);
+		auto commandCode = std::format("N{}M03{}\n", command.m_LineNumber, rotationSpeedText);
 
 		m_FileStream << commandCode;
 	}
@@ -152,59 +152,59 @@ namespace GCP
 
 			auto value = formatter.str();
 
-			rotationSpeedText = std::format("S{} ", value);
+			rotationSpeedText = std::format("S{}", value);
 		}
 
-		auto commandCode = std::format("N{} M4 {}\n", command.m_LineNumber, rotationSpeedText);
+		auto commandCode = std::format("N{}M04{}\n", command.m_LineNumber, rotationSpeedText);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(ToolSpinDisableCommand& command)
 	{
-		auto commandCode = std::format("N{} M5\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}M05\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(CutterCompensationDisableCommand& command)
 	{
-		auto commandCode = std::format("N{} G40\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}G40\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(InchesUnitSystemSelectionCommand& command)
 	{
-		auto commandCode = std::format("N{} G20\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}G20\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(MillimetersUnitSystemSelectionCommand& command)
 	{
-		auto commandCode = std::format("N{} G21\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}G21\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(ProgramStopCommand& command)
 	{
-		auto commandCode = std::format("N{} M30\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}M30\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(ToolPositioningAbsoluteCommand& command)
 	{
-		auto commandCode = std::format("N{} G90\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}G90\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}
 	
 	void GCodeCommandSerializerVisitor::Visit(ToolPositioningIncrementalCommand& command)
 	{
-		auto commandCode = std::format("N{} G91\n", command.m_LineNumber);
+		auto commandCode = std::format("N{}G91\n", command.m_LineNumber);
 
 		m_FileStream << commandCode;
 	}

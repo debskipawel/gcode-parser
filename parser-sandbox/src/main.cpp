@@ -8,7 +8,7 @@ int main()
 {
 	auto parser = GCP::GCodeParser();
 
-	auto result = parser.LoadFromFile("testPathFile.f4");
+	auto result = parser.LoadFromFile("detail_path.k08");
 
 	if (result.m_Result == GCP::GCodeParserCode::SUCCESS)
 	{
@@ -21,7 +21,7 @@ int main()
 
 	auto serializer = GCP::GCodeSerializer();
 
-	serializer.Serialize(result.m_Program, "serializer_test.f04");
+	serializer.Serialize(result.m_Program, "detail_path.k08");
 
 	return 0;
 }
